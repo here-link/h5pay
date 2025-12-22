@@ -272,7 +272,10 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({"totalAmount": selectedAmount})
+            body: JSON.stringify({
+                "totalAmount": selectedAmount,
+                "quitUrl": "https://pay.here.link/"
+            })
         }).then(async res => {
             if (res.ok && res.status === 200) {
                 const json = await res.json();
