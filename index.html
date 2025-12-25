@@ -269,7 +269,7 @@
             // 禁用支付按钮
             document.getElementById('payBtn').disabled = true;
             document.getElementById('payBtn').classList.add('opacity-50');
-            document.getElementById('payBtn').textContent = '账户已过期';
+            document.getElementById('payBtn').textContent = '会话已过期';
             // 清除定时器
             if (countdownTimer) clearInterval(countdownTimer);
         } else {
