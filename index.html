@@ -494,14 +494,17 @@
     });
 
     // 页面加载完成后初始化
-    // window.addEventListener('DOMContentLoaded', initPage);
+    window.addEventListener('DOMContentLoaded', initPage);
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            initPage();
+        }
+    });
 
     // 页面卸载时清除定时器
     window.addEventListener('beforeunload', () => {
         if (countdownTimer) clearInterval(countdownTimer);
     });
-
-    initPage();
 </script>
 </body>
 </html>
