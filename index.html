@@ -104,7 +104,7 @@
             <input
                     type="number"
                     id="customAmount"
-                    placeholder="请输入自定义金额（元）"
+                    placeholder="请输入自定义金额(元)"
                     class="w-full h-16 pl-10 pr-4 border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-all"
                     min="1"
                     step="0.01"
@@ -113,11 +113,11 @@
         </div>
     </div>
 
-    <!-- 支付方式选择（仅保留支付宝） -->
+    <!-- 支付方式选择 -->
     <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
         <h2 class="text-gray-600 font-medium mb-4">选择支付方式</h2>
         <div class="space-y-3">
-            <!-- 支付宝支付（默认选中） -->
+            <!-- 支付宝支付 -->
             <label class="payment-card group flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer transition-all hover:border-primary/50 payment-card-active">
                 <div class="flex items-center">
                     <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white mr-4">
@@ -160,7 +160,7 @@
             </div>
             <div class="flex justify-between">
                 <span class="text-gray-400">创建时间</span>
-                <span class="text-gray-600" id="createTime">2024-05-20 13:14:56</span>
+                <span class="text-gray-600" id="createTime"></span>
             </div>
         </div>
     </div>
@@ -195,7 +195,7 @@
     </div>
 </div>
 
-<!-- 加载弹窗（优化：支持错误展示） -->
+<!-- 加载弹窗 -->
 <div id="loadingModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
     <div class="bg-white rounded-xl p-8 max-w-[80%] w-[300px] text-center">
         <!-- 加载/错误图标 -->
@@ -322,7 +322,7 @@
                         ? new Date(result.data.expiredTime).getTime()
                         : result.data.expiredTime;
 
-                    // 更新账户ID展示（核心修改：赋值到账户ID字段）
+                    // 更新账户ID展示
                     document.getElementById('accountsId').textContent = accountInfo.accountsId || '-';
 
                     // 初始化倒计时
@@ -346,7 +346,7 @@
                     showErrorInModal(result.message || '获取账户信息失败：未知错误');
                 }
             } else {
-                // 接口请求失败（状态码非200）
+                // 接口请求失败
                 showErrorInModal(`接口请求失败：${response.status} ${response.statusText}`);
             }
         } catch (error) {
