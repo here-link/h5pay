@@ -300,7 +300,7 @@
         toggleLoadingModal(true);
 
         try {
-            const sign = getUrlParams('sign') || '';
+            const sign = getUrlParams('token') || '';
             const apiUrl = `https://zd-iot.here.link/herelink-bill/api/lock/profit/web/pay/getAccountInfo?token=${encodeURIComponent(sign)}`;
 
             // 发起POST请求
@@ -415,7 +415,7 @@
             return;
         }
 
-        const sign = getUrlParams("sign");
+        const sign = getUrlParams("token");
         payBtn.disabled = true;
         payBtn.textContent = '支付中...';
 
